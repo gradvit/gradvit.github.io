@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-svg" href="./images/nvidia.svg">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://kit.fontawesome.com/8290b48404.js" crossorigin="anonymous"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="./dist/style.css">
+    
+    <title>GradViT: Gradient Inversion of Vision Transformers</title>
+</head>
+<body>
+    <div class="main container">
+        <nav class="menu">
+            <ul>
+                <li><a href="#news">News</a></li>
+                <li><a href="#paper">Paper</a></li>
+            </ul>
+        </nav>
+        <div class="wrapper">
+            <div class="wrapper-title">
+                <div id="title">GradViT: Gradient Inversion of Vision Transformers</div>
+            </div>
+
+            <div class="wrapper-crew">
+                <div class="crew">
+                    <ul>
+                        <li class="wow animate__animated animate__fadeInDown"><a target="_blank" class="main-star" href="https://research.nvidia.com/person/ali-hatamizadeh">Ali Hatamizadeh</a></li>
+                        <li class="wow animate__animated animate__fadeInDown"><a target="_blank" class="main-star" href="https://research.nvidia.com/person/danny-yin">Hongxu Yin</a></li>
+                        <li class="wow animate__animated animate__fadeInDown"><a target="_blank" class="" href="https://research.nvidia.com/person/holger-roth">Holger Roth</a></li>
+                        <li class="wow animate__animated animate__fadeInUp"><a target="_blank" class="" href="https://research.nvidia.com/person/wenqi-li">Wenqi Li</a></li>
+                        <li class="wow animate__animated animate__fadeInUp"><a target="_blank" class="" href="https://research.nvidia.com/person/jan-kautz">Jan Kautz</a></li>
+                        <li class="wow animate__animated animate__fadeInUp"><a target="_blank" class="secondary-star" href="https://research.nvidia.com/person/daguang-xu">Daguang Xu</a></li>
+                        <li class="wow animate__animated animate__fadeInUp"><a target="_blank" class="secondary-star" href="https://research.nvidia.com/person/pavlo-molchanov">Pavlo Molchanov</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="wrapper-main-download">
+                <div class="main-download">
+                    <figure>
+                        <img src="./images/nvidia.svg" alt="">                        
+                    </figure>
+                    <h2>CVPR 2022</h2>
+                    <img class="lg" src="./images/logo.jpeg" alt="">
+                    <div class="download-btn">
+                        <a class="wow animate__animated animate__lightSpeedInLeft" target="_blank" href=""><i class="far fa-sticky-note"></i> Paper </a>
+                        <a class="wow animate__animated animate__lightSpeedInRight" target="_blank" href=""><i class="fas fa-file-code"></i> code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper-articles">
+                <div class="article">
+                    <figure class="article-image">
+                        <img class="wow animate__animated animate__fadeInLeft" src="./images/client_server.png" alt="">
+                        <figcaption>*Equal contribution.**Equal advising.</figcaption>
+                    </figure>
+                </div>
+                
+
+                <div id="news" class="article">
+                    <div class="title">
+                        <span>News</span>
+                    </div>
+                    <div class="news-wrapper">
+                        <ul>
+                            <li><i class="fa-solid fa-rss"></i> [Mar 2022] <a target="_blank" href="">Code</a> will be released.</li>
+                            <li><i class="fa-solid fa-rss"></i> [Mar 2022] Our paper has been accepted to <a target="_blank" href="https://cvpr2022.thecvf.com/">CVPR 2022</a>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="title">
+                        <span>Abstract</span>
+                    </div>
+                    <article>
+                        <p> In this work we demonstrate the vulnerability of vision transformers (ViTs) to gradient-based inversion attacks. During this attack, the original data batch is reconstructed given model weights and the corresponding gradients. We introduce a method, named GradViT, that optimizes random noise into naturally looking images via an iterative process. The optimization objective consists of (i) a loss on matching the gradients, (ii) image prior in the form of distance to batch-normalization statistics of a pretrained CNN model, and (iii) a total variation regularization on patches to guide correct recovery locations. We propose a unique loss scheduling function to overcome local minima during optimization. We evaluate GadViT on ImageNet1K and MS-Celeb-1M datasets, and observe unprecedentedly high fidelity and closeness to the original (hidden) data. During the analysis we find that vision transformers are significantly more vulnerable than previously studied CNNs due to the presence of the attention mechanism. Our method demonstrates new state-of-the-art results for gradient inversion in both qualitative and quantitative metrics.</p>
+                    </article>
+                    <figure class="article-image"></figure>
+                </div>
+                <div class="article">
+                    <div class="title">
+                        <span>Key Findings</span>
+                    </div>
+                    <article>
+                        <p>
+                        We show vision transformer gradients encode a surprising amount of information
+                        such that high-fidelity original image batches of high resolution can
+                        be recovered, see 112 &times 112 pixel MS-Celeb-1M and 224 &times 224
+                        pixel ImageNet1K sample recovery above and more in experiments.
+                        Our method, GradViT, yields the first successful attempt to invert
+                        ViT gradients, not achievable by previous state-of-the-art methods.
+                        We demonstrate that ViTs, despite lacking batchnorm layers, suffer
+                        even more data leakage compared to CNNs. As insights we show
+                        that ViT gradients (i) encode uneven original information across
+                        layers, and (ii) attention is all that reveals.
+                        </p>
+                    </article>
+                    <figure class="article-image">
+                        <img class="wow animate__animated animate__fadeInRight" src="./images/client_server.jpg" alt="">
+                        <figcaption></figcaption>
+                    </figure>
+
+                    <figure class="article-image">
+                        <img class="wow animate__animated animate__bounceIn" src="./images/imagenet_results.png" alt="">
+                        <figcaption>Qualitative comparisons of reconstructed images from batch of 8 images in ImageNet1K dataset using the proposed GradViT and state-of-the-art GradInversion. GradViT outperforms GradInversion both qualitatively and quantitatively. It recovers the most intricate details, of very high image fidelity and naturalness, not only for the target objects, but also all the background scenes.</figcaption>
+                    </figure>
+
+<!--                    <article>-->
+<!--                        <p> In this work we demonstrate the vulnerability of vision transformers (ViTs) to gradient-based inversion attacks. During this attack, the original data batch is reconstructed given model weights and the corresponding gradients. We introduce a method, named GradViT, that optimizes random noise into naturally looking images via an iterative process. The optimization objective consists of (i) a loss on matching the gradients, (ii) image prior in the form of distance to batch-normalization statistics of a pretrained CNN model, and (iii) a total variation regularization on patches to guide correct recovery locations. We propose a unique loss scheduling function to overcome local minima during optimization. We evaluate GadViT on ImageNet1K and MS-Celeb-1M datasets, and observe unprecedentedly high fidelity and closeness to the original (hidden) data. During the analysis we find that vision transformers are significantly more vulnerable than previously studied CNNs due to the presence of the attention mechanism. Our method demonstrates new state-of-the-art results for gradient inversion in both qualitative and quantitative metrics.</p>-->
+<!--                    </article>-->
+
+                    <figure class="article-image">
+                        <img src="./images/face_results.png" alt="">
+                        <figcaption>Qualitative comparison of reconstructed images from MS-Celeb-1M dataset using batch gradient inversion of Face-Transformer. GradViT is able to recover detailed and facial features identical to the original. Recovery at batch size 4.</figcaption>
+
+                    
+                    </figure>
+                </div>
+            </div>
+
+           <div class="papers">
+            <div id="paper" class="wrapper-extra-links">
+                <div class="extra-link">
+                    <div class="paper-pic">
+                        <span class="paper-title">Paper</span>
+                        <figure>
+                            <a target="_blank" href=""><img src="./images/paper_cover.png" alt=""></a>
+                        </figure>
+                    </div>
+                    <div class="description">
+                        <p> 	
+
+                            GradViT: Gradient Inversion of Vision Transformers,
+                            CVPR 2022.
+                        </p>
+
+                        <a target="_blank" href="">paper</a>
+                    </div>
+                </div>
+            </div>
+
+<!--            <div class="wrapper-extra-links">-->
+<!--                <div class="extra-link extra-link-sup">-->
+<!--                    <div class="paper-pic">-->
+<!--                        <span class="paper-title">Supplementary Material</span>-->
+<!--                        <figure>-->
+<!--                            <a target="_blank" href=""><img src="./images/sm_illustration.png" alt=""></a>-->
+<!--                        </figure>-->
+<!--                    </div>-->
+<!--                    <div class="description">-->
+<!--                        <a target="_blank" href="">Supplementary Page</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+           </div>
+
+            <div class="wrapper-code">
+                <span class="title">Bibtex</span>
+                    <pre>
+                        <code id="code">
+  @article{Gradvit2022,
+       author     = {Ali Hatamizadeh and Hongxu Yin and Holger Roth and Wenqi Li and Jan Kautz and Daguang Xu and Pavlo Molchanov},
+       title      = {Grad{V}i{T}: {G}radient Inversion of Vision Transformers},
+       conference = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+       year       = {2022},
+    }
+                        </code>
+                    </pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dist/js/wow.min.js"></script>
+    <script src="./dist/js/main.js"></script>
+</body>
+</html>
